@@ -12,16 +12,21 @@ a.whatsapp-button div.whatsapp-icon {
     text-align: center;
     line-height: 50px;
     color: white;
+    z-index: 1000;
 }
+
 a.whatsapp-button div.whatsapp-icon.left {
     left: 20px;
 }
+
 a.whatsapp-button div.whatsapp-icon.right {
     right: 20px;
 }
+
 a.whatsapp-button:hover div.whatsapp-icon {
     box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
 }
+
 a.whatsapp-button div.whatsapp-icon svg {
     width: 40px;
     height: 40px;
@@ -30,6 +35,7 @@ a.whatsapp-button div.whatsapp-icon svg {
     top: 5px;
     left: 1px;
 }
+
 @media(max-width:468px){
     a.whatsapp-button div.whatsapp-icon {
         right: 16px;
@@ -49,18 +55,21 @@ a.whatsapp-button div.whatsapp-icon svg {
     border: 1px solid #e2e2e2;
     border-radius: 5px;
     background: white;
-    -webkit-animation: 3s ease 0s normal forwards 1 fadein; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: 3s ease 0s normal forwards 1 fadein; /* Firefox < 16 */
-        -ms-animation: 3s ease 0s normal forwards 1 fadein; /* Internet Explorer */
-         -o-animation: 3s ease 0s normal forwards 1 fadein; /* Opera < 12.1 */
+    -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+       -moz-animation: 3s ease 0s normal forwards 1 fadein;
+        -ms-animation: 3s ease 0s normal forwards 1 fadein;
+         -o-animation: 3s ease 0s normal forwards 1 fadein;
             animation: 3s ease 0s normal forwards 1 fadein;
 }
+
 .whatsapp-balloon.left {
     left: 85px;
 }
+
 .whatsapp-balloon.right {
     right: 85px;
 }
+
 .whatsapp-balloon span {
     overflow: hidden;
     word-wrap: break-word;
@@ -70,6 +79,7 @@ a.whatsapp-button div.whatsapp-icon svg {
     display: block;
     text-align: center;
 }
+
 .whatsapp-balloon:after {
     content: "";
     position: absolute;
@@ -81,10 +91,12 @@ a.whatsapp-button div.whatsapp-icon svg {
     display: block;
     width: 0;
 }
+
 .whatsapp-balloon.left:after {
     left: -7px;
     transform: rotate(135deg);
 }
+
 .whatsapp-balloon.right:after {
     right: -7px;
     transform: rotate(-45deg);
@@ -114,4 +126,139 @@ a.whatsapp-button div.whatsapp-icon svg {
     0% { opacity:0 }
     80% { opacity:0 }
     100% { opacity:1 }
+}
+
+.whatsapp-contact-modal {
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.whatsapp-contact-modal-content {
+    background-color: #e5ddd5;
+    margin: 15% auto;
+    width: 80%;
+    box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
+    animation-name: animatebottom;
+    animation-duration: 0.4s
+}
+
+@media(min-width:468px){
+    .whatsapp-contact-modal-content {
+        position: fixed;
+        bottom: 90px;
+        margin: 0;
+        width: 30rem;
+    }
+
+    .whatsapp-contact-modal-content.left {
+        left: 20px;
+    }
+
+    .whatsapp-contact-modal-content.right {
+        right: 20px;
+    }
+}
+
+@keyframes animatebottom {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 90px; opacity: 1}
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.close:hover,
+.close:focus {
+    color: #eee;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.whatsapp-contact-modal-header {
+    padding: 16px 16px;
+    background-color: #00bfa5;
+    color: white;
+}
+
+.whatsapp-contact-modal-header p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    max-width: 80%;
+}
+
+.whatsapp-contact-modal-body {
+    position: relative;
+    padding: 2px 16px;
+    background-color: #e5ddd5;
+}
+
+.whatsapp-contact-modal-body::before {    
+    content: "";
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    background-repeat: repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
+}
+
+
+.whatsapp-contact-modal-body > form {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+.whatsapp-contact-modal-body form button,
+.whatsapp-contact-modal-body form input {
+    z-index: 1000;
+}
+
+.whatsapp-contact-modal form > input,
+.whatsapp-contact-modal form > input:hover,
+.whatsapp-contact-modal form > input:active,
+.whatsapp-contact-modal form > input:focus {
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.whatsapp-contact-modal form > input[type=submit] {
+    width: 100%;
+    background-color: #4dc247;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.whatsapp-contact-modal form > input[type=submit]:active, 
+.whatsapp-contact-modal form > input[type=submit]:focus,
+.whatsapp-contact-modal form > input[type=submit]:hover {
+    background-color: #47b741;
+    border: none;
 }
