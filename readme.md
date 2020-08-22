@@ -1,4 +1,4 @@
-Plugin design to capture leads prior to letting users talk with team on WhatsApp, thus letting you create a database of people that are interested on your bussiness regardless of what were discussed on the Whatsapp conversation.
+Plugin designed to capture leads prior to letting users talk with team on WhatsApp, thus letting you create a database of people that are interested on your bussiness regardless of what were discussed on the Whatsapp conversation.
 
 ------------
 
