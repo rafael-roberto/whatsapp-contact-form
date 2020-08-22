@@ -207,7 +207,7 @@ a.whatsapp-button div.whatsapp-icon svg {
 
 .whatsapp-contact-modal-body::before {    
     content: "";
-    background-image: url('../img/bg.png');
+    background-image: url('https://web.whatsapp.com/img/bg-chat-tile-light_9e8a2898faedb7db9bf5638405cf81ae.png');
     background-size: cover;
     background-repeat: repeat;
     position: absolute;
