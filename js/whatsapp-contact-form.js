@@ -2,7 +2,7 @@
 var alignment = 'left'; // left or right
 var phone = '5541999999999' // full number with country code e local area code, numbers only
 var msg = 'Olá! Tenho interesse no seu produto.' // initial message to send
-var email = 'rafael.rp.silva@hotmail.com' // destination mail to capture the client data
+var email = 'mail@test.com' // destination mail to capture the client data
 var balloon = 'Orçamento e Prazo? Pergunte aqui.'; // message show on the call-to-action balloon
 var backend = 'email.php'; //set the location of the destination of the form action
 var balloonHover;
